@@ -18,12 +18,15 @@ import { BooksFacade } from '../../books.facade';
 import { BookDetailComponent } from './book-detail.component';
 import * as fromBook from '../../books.reducer';
 import { BooksService } from '../../books.service';
+import { BillingDetailsComponent } from '../../billing-details/billing-details.component';
+import { Router } from '@angular/router';
 
 describe('BookDetailComponent', () => {
   let component: BookDetailComponent;
   let fixture: ComponentFixture<BookDetailComponent>;
   let mockStore: MockStore;
   let mockCollectionBooksSelector: MemoizedSelector<fromBook.State, any>;
+  let router;
   const initialState = [
     {
       kind: 'books#volume',
@@ -105,7 +108,9 @@ describe('BookDetailComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [BookDetailComponent],
+      declarations: [
+        BookDetailComponent,
+      ],
       providers: [BooksFacade, provideMockStore({})],
       imports: [
         MatToolbarModule,
@@ -116,9 +121,12 @@ describe('BookDetailComponent', () => {
         FormsModule,
         EllipsisModule,
         MatListModule,
-        RouterTestingModule,
+        RouterTestingModule.withRoutes([
+          {path: 'billingDetails', component: BookDetailComponent}
+        ])
       ],
     }).compileComponents();
+    router = TestBed.get(Router);
     mockStore = TestBed.get(MockStore);
     //  const getBookFeatureStaste = createFeatureSelector<fromBook.BooksState>('books');
     mockCollectionBooksSelector = mockStore.overrideSelector(
@@ -165,10 +173,13 @@ describe('BookDetailComponent', () => {
     [BooksService],
     (service : BooksService) => {
     spyOn(component, 'buyNow').and.callThrough();
+    const navigateSpy = spyOn(router, 'navigate');
     const spy = spyOn(service, 'setPurchaseListItems');
 
     component.buyNow(initialState);
     fixture.detectChanges();
     expect(spy).toHaveBeenCalled();
+    fixture.detectChanges();
+    expect(navigateSpy).toHaveBeenCalledWith(['billingDetails']);
   }));
 });

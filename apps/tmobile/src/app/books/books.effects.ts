@@ -6,10 +6,8 @@ import { mergeMap, map, catchError, switchMap } from 'rxjs/operators';
 import { SearchService } from './search/search.service';
 
 /* NgRx */
-import { Action } from '@ngrx/store';
-import { Actions, Effect, ofType , createEffect} from '@ngrx/effects';
+import { Actions, ofType , createEffect} from '@ngrx/effects';
 import * as bookActions from './books.actions';
-import { Book } from './Book';
 
 @Injectable()
 export class BooksEffects {

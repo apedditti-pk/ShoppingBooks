@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { async, ComponentFixture, getTestBed } from '@angular/core/testing';
+import { async, getTestBed } from '@angular/core/testing';
 import { TestBed } from '@angular/core/testing';
 
 import { SearchService } from './search.service';

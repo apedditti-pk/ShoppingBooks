@@ -29,7 +29,7 @@ export class BooksFacade {
   }
 
   addToCollections(payload: BookItems[], purchaseInfo: any){
-    const x = {payload ,purchaseInfo}
+    const x = {payload ,purchaseInfo};
     this.store.dispatch(BookActions.AddToCollections(x));
   }
 
