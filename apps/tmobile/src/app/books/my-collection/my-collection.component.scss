@@ -1,0 +1,42 @@
+@import "variables";
+@import "mixins";
+
+.collections-container{
+    display: Flex;
+    flex-wrap: wrap;
+    justify-content: center;
+        .book-container{
+            flex: 0 48%;
+            box-sizing:border-box;
+            margin-bottom: 25px;
+             @include container-cmn($white-color);
+             &:nth-child(odd){
+                margin-right: 25px;
+            }
+            img{
+                height: 100px;
+            }
+
+            .book-title-container{
+                @include flex(wrap,row);
+                justify-content: space-between;
+            }
+
+            .book-signature{
+                @include book-signature();
+            }
+
+            button{
+                @include button-cmn($base-color, $white-color);
+                margin-right: 15px;
+            }
+
+            .billing-info{
+                @include flex(wrap,column);
+            }
+        }
+    
+}
+
+
+

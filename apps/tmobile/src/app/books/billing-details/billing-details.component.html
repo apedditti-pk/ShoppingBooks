@@ -1,0 +1,64 @@
+<div class = "billing-details-container">
+    <div class="billing-info-content">
+        <div>Background Image</div>
+        <div class = "billing-Info">
+            <span class = "title"><b>Billing Info</b></span>
+            <form novalidate (ngSubmit)="submitOrder(billingForm)" [formGroup]="billingForm" class = "form billing-InfoForm" name = "billingForm">
+                <mat-form-field class="form-group">
+                    <mat-label>Your Name</mat-label>
+                    <input 
+                        matInput 
+                        type="text" 
+                        [ngClass]="{'is-invalid': displayMessage.orderName }"
+                        class="form-control"
+                        formControlName = "orderName" 
+                        (blur)="blur()" />
+                        <mat-error class="invalid-feedback" *ngIf="displayMessage.orderName">
+                            {{displayMessage.orderName}}
+                        </mat-error>
+                </mat-form-field>
+                <mat-form-field class="form-group">
+                    <mat-label>Your email</mat-label>
+                    <input 
+                        matInput 
+                        type="email" 
+                        formControlName="email"
+                        (blur)="blur()"
+                        [ngClass]="{'is-invalid': displayMessage.email}" 
+                        class="form-control"/>
+                    <mat-error class="invalid-feedback" *ngIf="displayMessage.email">
+                        {{displayMessage.email}}
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="form-group">
+                    <mat-label>Your phone number</mat-label>
+                    <input 
+                        matInput 
+                        type="text" 
+                        formControlName="phoneNumber"
+                        (blur)="blur()"
+                        [ngClass]="{'is-invalid': displayMessage.phoneNumber}" 
+                        class="form-control">
+                    <mat-error class="invalid-feedback" *ngIf="displayMessage.phoneNumber">
+                        {{displayMessage.phoneNumber}}
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="form-group">
+                    <mat-label>Your address</mat-label>
+                    <textarea 
+                        matInput 
+                        formControlName="address"
+                        (blur)="blur()"
+                        [ngClass]="{'is-invalid': displayMessage.address}" 
+                        class="form-control"></textarea>
+                    <mat-error class="invalid-feedback" *ngIf="displayMessage.address">
+                        {{displayMessage.address}}
+                    </mat-error>
+                </mat-form-field>
+                <button type ="submit" mat-button matSuffix [disabled] = 'billingForm.valid === false'>
+                        Submit
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

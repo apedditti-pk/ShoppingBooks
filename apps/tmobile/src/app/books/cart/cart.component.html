@@ -1,0 +1,25 @@
+<div class = "cart-container" *ngIf="outlet.isActivated == false && cartBooks$ | async as cartBooks">
+        <div class = "book-container"  *ngFor="let cartBook of cartBooks">
+            <!-- <div>{{ cartBooks.length }}</div> -->
+            <div class = "book-title-container">
+                <p><b>{{ cartBook.volumeInfo.title }}</b></p>
+                <span *ngIf = "cartBook.volumeInfo.imageLinks"><img [src]= 'cartBook.volumeInfo.imageLinks.smallThumbnail'/></span>
+            </div>
+            <p style="width: 100%; height: 70px;" ellipsis [ellipsis-content]="cartBook.volumeInfo.description">
+            </p>
+            <div class = "book-signature">
+                <span><b>written by</b></span>
+                <span>Arthireddy</span>
+            </div>
+            <div class = "cart-buttons">
+                <button mat-button matSuffix mat-icon-button (click) = "clearCartClicked(cartBook)">
+                    <mat-icon> remove_shopping_cart</mat-icon>
+                </button>
+            </div>
+        </div>
+        <span><button mat-button matSuffix (click) = "purchaseClicked(cartBooks)" *ngIf="cartBooks?.length > 0">
+            Proceed to purchase
+        </button></span>
+</div>
+
+<router-outlet #outlet="outlet"></router-outlet>

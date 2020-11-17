@@ -1,0 +1,39 @@
+@import "variables";
+@import "mixins";
+
+.billing-details-container{
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    .billing-info-content{
+        @include container-cmn(#ffffff);
+        @include flex(wrap,row);
+        box-sizing:border-box;
+        .billing-Info{
+            padding: 10px;
+            align-items: center;
+           @include flex(wrap,column);
+           .title{
+               margin: 10px 0;
+           }
+            .billing-InfoForm{
+                @include flex(nowrap,column);
+                background-color: rgba(0,0,0,.04);
+                button{
+                    background-color: #ebebeb;
+                    color: black;
+                    float: right;
+                    width: 50%;
+                    &:disabled{
+                        cursor: not-allowed;
+                        color : grey !important;
+                    }
+                }
+                .form-group{
+                    min-width: 400px;
+                }
+            }
+        }
+    }
+    
+}

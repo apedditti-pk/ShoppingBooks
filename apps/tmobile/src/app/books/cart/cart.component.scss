@@ -1,0 +1,41 @@
+@import "variables";
+@import "mixins";
+
+.cart-container{
+    display: Flex;
+    flex-wrap: wrap;
+        .book-container{
+            flex: 0 48%;
+            box-sizing:border-box;
+            margin-bottom: 25px;
+            &:nth-child(odd){
+                margin-right: 25px;
+            }
+            img{
+                height: 100px;
+            }
+
+             @include container-cmn($white-color);
+
+            .book-title-container{
+                @include flex(wrap,row);
+                justify-content: space-between;
+            }
+
+            .book-signature{
+                @include book-signature();
+            }
+            .cart-buttons{
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+        button{
+            @include button-cmn($base-color, $white-color);
+            margin-right: 15px;
+        }  
+    
+}
+
+
+

@@ -1,0 +1,32 @@
+@mixin button-cmn($bg, $txtClr) {
+    background: $bg;
+    color: $txtClr;
+    // &:hover {
+    //   background:darken($bg,8%);
+    //   transition: all 0.3s ease;
+    // }
+    // &:active {
+    //   background:darken($bg,25%);
+    // } 
+  }
+
+@mixin container-cmn($bg) {
+    background-color: $bg;
+    padding: 10px;
+    -webkit-box-shadow: 3px 20px 5px -19px rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px 20px 5px -19px rgba(0,0,0,0.75);
+    box-shadow: 3px 20px 5px -19px rgba(0,0,0,0.75);
+}
+
+@mixin book-signature(){
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+@mixin flex($wrap,$direction) {
+  display: flex;
+  flex-wrap: $wrap;
+  flex-direction: $direction;
+}

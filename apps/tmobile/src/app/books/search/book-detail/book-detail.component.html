@@ -1,0 +1,25 @@
+<div class = "book-container" *ngIf="book">
+    <div class = "book-title-container">
+        <p><b>{{ book.volumeInfo.title }}</b></p>
+        <span *ngIf = "book.volumeInfo.imageLinks"><img [src]= 'book.volumeInfo.imageLinks.smallThumbnail'/></span>
+    </div>
+    <div class = "book-info">
+        <span><b>Rating: </b> {{ book.volumeInfo.ratingsCount }}</span>
+        <span><b>Publisher: </b> {{ book.volumeInfo.publisher }}</span>
+        <span><b>Page Count: </b>{{ book.volumeInfo.pageCount }}</span>
+        <span><b>Language: </b> {{ book.volumeInfo.language }}</span>
+    </div>
+    <p>
+       {{ book.volumeInfo.description }}
+    </p>
+    <div class = "book-signature">
+        <span><b>written by</b></span>
+        <span>Arthireddy</span>
+    </div>
+    <div>
+        <button mat-button matSuffix (click) = "addToCart(book)">ADD TO CART
+        </button>
+        <button mat-button matSuffix (click) = "buyNow(book)"> BUY
+        </button>
+    </div>
+</div>

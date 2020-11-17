@@ -1,0 +1,50 @@
+@import "variables";
+@import "mixins";
+
+.search-container{
+    display: Flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    mat-form-field{
+        width: 200px;
+    }
+
+    .mat-form-field-flex{
+        background-color: white !important ;
+    }
+      
+
+    .search-list-container{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+
+        .book-container{
+            flex: 0 48%;
+            box-sizing:border-box;
+            margin-bottom: 25px;
+            &:nth-child(odd){
+                margin-right: 25px;
+            }
+             @include container-cmn($white-color);
+
+            .book-title-container{
+                @include flex(wrap,row);
+                justify-content: space-between;
+            }
+
+            img{
+                height: 100px;
+            }
+
+            .book-signature{
+                @include book-signature();
+            }
+        }
+    }
+    
+}
+
+
+

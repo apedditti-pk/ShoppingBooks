@@ -1,0 +1,32 @@
+@import "variables";
+@import "mixins";
+
+
+
+.book-container{
+    @include container-cmn($white-color);
+
+    .book-title-container{
+        @include flex(wrap,row);
+        justify-content: space-between;
+    }
+
+    img{
+        height: 100px;
+    }
+    
+    .book-signature{
+        @include book-signature();
+    }
+
+    .book-info{
+        @include flex(wrap,column);
+    }
+
+    button{
+        @include button-cmn($base-color, $white-color);
+        margin-right: 15px;
+    }
+}
+
+
