@@ -7,7 +7,7 @@ import { StoreModule } from '@ngrx/store';
 import { EllipsisModule } from 'ngx-ellipsis';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BooksFacade } from './books/books.facade';
+import { BooksFacade } from './books/state/books.facade';
 import { BooksModule } from './books/books.module';
 import { BooksService } from './books/books.service';
 import { HomeComponent } from './books/home/home.component';

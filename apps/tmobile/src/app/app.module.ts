@@ -12,18 +12,17 @@ import { EllipsisModule } from 'ngx-ellipsis';
 import { BooksService } from './books/books.service';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { BooksFacade } from './books/books.facade';
+import { BooksFacade } from './books/state/books.facade';
 import { LayoutsModule } from './layouts/layout.module';
 import { SearchService } from './books/search/search.service';
 import { reducers } from './reducers';
 import { BooksModule } from '../app/books/books.module';
 import { environment } from '../environments/environment';
-import { HomeComponent } from './books/home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 @NgModule({
-  declarations: [AppComponent, PageNotFoundComponent, HomeComponent],
+  declarations: [AppComponent, PageNotFoundComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

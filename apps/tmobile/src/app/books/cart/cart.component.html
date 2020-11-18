@@ -1,6 +1,5 @@
 <div class = "cart-container" *ngIf="outlet.isActivated == false && cartBooks$ | async as cartBooks">
         <div class = "book-container"  *ngFor="let cartBook of cartBooks">
-            <!-- <div>{{ cartBooks.length }}</div> -->
             <div class = "book-title-container">
                 <p><b>{{ cartBook.volumeInfo.title }}</b></p>
                 <span *ngIf = "cartBook.volumeInfo.imageLinks"><img [src]= 'cartBook.volumeInfo.imageLinks.smallThumbnail'/></span>

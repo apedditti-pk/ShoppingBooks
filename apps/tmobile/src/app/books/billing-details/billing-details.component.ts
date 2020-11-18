@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators} from '@angular/forms';
 import { GenericValidator } from '../../../shared/generic-validator';
-import { BookItems } from '../book';
+import { BookItems } from '../state/book';
 import { BooksService } from '../books.service';
-import { BooksFacade } from '../books.facade';
+import { BooksFacade } from '../state/books.facade';
 
 @Component({
   selector: 'tmobile-billing-details',

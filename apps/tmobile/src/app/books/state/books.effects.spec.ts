@@ -6,7 +6,7 @@ import { of } from 'rxjs/internal/observable/of';
 import { provideMockActions } from '@ngrx/effects/testing';
 import { ReplaySubject } from 'rxjs';
 
-import { SearchService } from './search/search.service';
+import { SearchService } from '../search/search.service';
 import { BooksEffects } from './books.effects';
 import * as BookActions from './books.actions';
 import { EffectsModule } from '@ngrx/effects';

@@ -3,9 +3,9 @@ import { Router } from '@angular/router';
 
 import { Observable } from 'rxjs';
 
-import { BookItems } from '../book';
+import { BookItems } from '../state/book';
 import { BooksService } from '../books.service';
-import { BooksFacade } from '../books.facade';
+import { BooksFacade } from '../state/books.facade';
 
 @Component({
   selector: 'tmobile-cart',

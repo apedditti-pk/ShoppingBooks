@@ -15,9 +15,9 @@ import {
 import { MatListModule } from '@angular/material/list';
 import { Router } from '@angular/router';
 
-import { BookItems } from '../book';
-import * as fromBook from '../books.reducer';
-import { BooksFacade } from '../books.facade';
+import { BookItems } from '../state/book';
+import * as fromBook from '../state/books.reducer';
+import { BooksFacade } from '../state/books.facade';
 import { SearchComponent } from './search.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { EllipsisModule } from 'ngx-ellipsis';

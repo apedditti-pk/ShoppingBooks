@@ -7,9 +7,9 @@ import { MemoizedSelector } from '@ngrx/store';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { of } from 'rxjs/internal/observable/of';
 
-import { BooksFacade } from '../../books/books.facade';
+import { BooksFacade } from '../../books/state/books.facade';
 import { SideNavService } from '../side-nav.service';
-import * as fromBook from '../../books/books.reducer';
+import * as fromBook from '../../books/state/books.reducer';
 import { DrawerComponent } from './drawer.component';
 
 describe('DrawerComponent', () => {

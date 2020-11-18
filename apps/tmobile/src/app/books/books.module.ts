@@ -4,8 +4,8 @@ import { CommonModule } from '@angular/common';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 
-import { booksReducer } from './books.reducer';
-import { BooksEffects } from './books.effects'; 
+import { booksReducer } from './state/books.reducer';
+import { BooksEffects } from './state/books.effects'; 
 
 @NgModule({
     imports: [

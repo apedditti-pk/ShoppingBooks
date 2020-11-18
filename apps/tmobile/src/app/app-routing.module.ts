@@ -1,16 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { HomeComponent } from './books/home/home.component';
-
 
 const appRoutes: Routes = [
         {
-            path: '',
-            component: HomeComponent
-        },
-        {
-          path: 'search',
+          path: '',
           loadChildren: () =>
             import('./books/search/search.module').then(m => m.SearchModule)
         },

@@ -18,7 +18,7 @@ import { LayoutsComponent } from './layouts.component';
 import { HeaderComponent } from './header/header.component';
 import { DrawerComponent } from './drawer/drawer.component';
 import { SideNavService } from './side-nav.service';
-import { BooksFacade } from '../books/books.facade';
+import { BooksFacade } from '../books/state/books.facade';
 
 
 describe('LayoutsComponent', () => {

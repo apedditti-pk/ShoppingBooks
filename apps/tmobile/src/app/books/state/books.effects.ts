@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { mergeMap, map, catchError, switchMap } from 'rxjs/operators';
 
-import { SearchService } from './search/search.service';
+import { SearchService } from '../search/search.service';
 
 /* NgRx */
 import { Actions, ofType , createEffect} from '@ngrx/effects';

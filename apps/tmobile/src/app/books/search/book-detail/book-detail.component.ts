@@ -3,10 +3,10 @@ import { ActivatedRoute , Params ,Router} from '@angular/router';
 
 import { Store, select } from '@ngrx/store';
 
-import * as fromBook from '../../books.reducer';
-import { BookItems } from '../../book';
+import * as fromBook from '../../state/books.reducer';
+import { BookItems } from '../../state/book';
 import { BooksService } from '../../books.service';
-import { BooksFacade } from '../../books.facade';
+import { BooksFacade } from '../../state/books.facade';
 
 
 @Component({

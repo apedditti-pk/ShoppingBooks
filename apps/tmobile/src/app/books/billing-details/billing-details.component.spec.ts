@@ -12,7 +12,7 @@ import { MatListModule } from '@angular/material/list';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 
 
-import { BooksFacade } from '../books.facade';
+import { BooksFacade } from '../state/books.facade';
 import { BooksService } from '../books.service';
 import { BillingDetailsComponent } from './billing-details.component';
 
@@ -48,13 +48,13 @@ describe('BillingDetailsComponent', () => {
     fixture = TestBed.createComponent(BillingDetailsComponent);
     component = fixture.componentInstance;
 
-    component.billingForm = new FormGroup({
-      address: new FormControl(''),
-      orderName: new FormControl(''),
-      email: new FormControl(''),
-      phoneNumber: new FormControl('')
-    });
-
+    component.displayMessage = {
+      address: 'hyd',
+      orderName: 'book',
+      email: 't@t.com',
+      phoneNumber: '9999999999'
+    };
+    component.ngOnInit();
     fixture.detectChanges();
   });
 

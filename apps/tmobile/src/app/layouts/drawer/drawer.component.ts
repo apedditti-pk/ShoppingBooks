@@ -4,7 +4,7 @@ import { MatSidenav } from '@angular/material';
 import { Observable } from 'rxjs';
 
 import { SideNavService } from '../side-nav.service';
-import { BooksFacade } from '../../books/books.facade';
+import { BooksFacade } from '../../books/state/books.facade';
 
 @Component({
   selector: 'tmobile-drawer',

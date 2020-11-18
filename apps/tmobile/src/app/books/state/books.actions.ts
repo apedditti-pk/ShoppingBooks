@@ -1,4 +1,4 @@
-import { Action, createAction , props} from '@ngrx/store';
+import { createAction , props} from '@ngrx/store';
 import { Book, BookItems } from './book';
 
 export const Load = createAction('[Book] Load Book',props<{ payload: string }>());

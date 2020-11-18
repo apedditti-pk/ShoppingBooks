@@ -3,8 +3,8 @@ import { Router } from '@angular/router';
 
 import { Observable } from 'rxjs';
 
-import { BookItems } from '../book';
-import { BooksFacade } from '../books.facade';
+import { BookItems } from '../state/book';
+import { BooksFacade } from '../state/books.facade';
 
 
 @Component({
@@ -30,7 +30,7 @@ export class SearchComponent implements OnInit {
   }
 
   bookSelected(id){
-    this.route.navigate(['search/bookDetail',id]);
+    this.route.navigate(['/bookDetail',id]);
   }
 
 }

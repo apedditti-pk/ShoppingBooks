@@ -13,13 +13,13 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { provideMockStore, MockStore } from '@ngrx/store/testing';
 import { createFeatureSelector, MemoizedSelector } from '@ngrx/store';
 
-import { BooksFacade } from '../books.facade';
-import * as fromBook from '../books.reducer';
+import { BooksFacade } from '../state/books.facade';
+import * as fromBook from '../state/books.reducer';
 import { BooksService } from '../books.service';
 import { CartComponent } from './cart.component';
 
 import { Router } from '@angular/router';
-import { Book } from '../book';
+import { Book } from '../state/book';
 
 describe('CartComponent', () => {
   let component: CartComponent;

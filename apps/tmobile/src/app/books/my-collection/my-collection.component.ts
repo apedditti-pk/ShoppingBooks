@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { Observable } from 'rxjs';
 
-import { BookItems } from '../book';
-import { BooksFacade } from '../books.facade';
+import { BookItems } from '../state/book';
+import { BooksFacade } from '../state/books.facade';
 
 
 @Component({

@@ -14,9 +14,9 @@ import {
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { EllipsisModule } from 'ngx-ellipsis';
 
-import { BooksFacade } from '../../books.facade';
+import { BooksFacade } from '../../state/books.facade';
 import { BookDetailComponent } from './book-detail.component';
-import * as fromBook from '../../books.reducer';
+import * as fromBook from '../../state/books.reducer';
 import { BooksService } from '../../books.service';
 import { BillingDetailsComponent } from '../../billing-details/billing-details.component';
 import { Router } from '@angular/router';

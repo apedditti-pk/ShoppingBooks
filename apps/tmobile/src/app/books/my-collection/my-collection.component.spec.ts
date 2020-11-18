@@ -12,9 +12,9 @@ import {
 } from '@angular/material';
 import { MatListModule } from '@angular/material/list';
 
-import { BooksFacade } from '../books.facade';
+import { BooksFacade } from '../state/books.facade';
 import { MyCollectionComponent } from './my-collection.component';
-import * as fromBook from '../books.reducer';
+import * as fromBook from '../state/books.reducer';
 import { FormsModule } from '@angular/forms';
 import { EllipsisModule } from 'ngx-ellipsis';
 
