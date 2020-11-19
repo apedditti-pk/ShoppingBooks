@@ -99,9 +99,8 @@ const reducer = createReducer(
   }),
 
   on(Books.AddToCollections, (state, { payload, purchaseInfo }) => {
-    let newData;
-    payload.forEach((item) =>
-     newData = Object.assign({}, item, { purchaseInfo: purchaseInfo[0] })
+    const newData = payload.map((item) =>
+      Object.assign({}, item, { purchaseInfo: purchaseInfo[0] })
     );
     return Object.assign({
       ...state,
