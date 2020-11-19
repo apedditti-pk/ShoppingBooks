@@ -10,7 +10,15 @@ export interface BookItems{
     id: string;
     etag: string;
     selfLink: string;
-    volumeInfo: object;
+    volumeInfo: {
+        title : string,
+        description : string,
+        imageLinks : {
+            smallThumbnail : string
+            thumbnail : string
+        },
+        publisher: string
+    };
     saleInfo: object;
     accessInfo:object;
     searchInfo: object;

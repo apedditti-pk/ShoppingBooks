@@ -13,7 +13,6 @@ describe('Books Facade', () => {
   let mockBooksSelector: MemoizedSelector<fromBook.State, any>;
   let mockCartBooksSelector: MemoizedSelector<fromBook.State, any>;
   let mockCollectionBooksSelector: MemoizedSelector<fromBook.State, any>;
-  let mockCartItemsCountSelector: MemoizedSelector<fromBook.State, any>;
 
   const initialState = [
     {

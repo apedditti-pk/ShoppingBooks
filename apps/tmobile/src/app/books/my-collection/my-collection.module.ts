@@ -15,6 +15,7 @@ import { FormsModule }   from '@angular/forms';
 import { EllipsisModule } from 'ngx-ellipsis';
 
 import { MyCollectionComponent } from './my-collection.component';
+import { BookListModule } from '../book-list/book-list.module';
 
 
 const myCollectionRoutes: Routes = [
@@ -37,6 +38,7 @@ const myCollectionRoutes: Routes = [
     MatInputModule,
     FormsModule,
     EllipsisModule,
+    BookListModule,
     RouterModule.forChild(myCollectionRoutes)
   ],
   exports: [

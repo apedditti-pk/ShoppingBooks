@@ -4,6 +4,7 @@ import { GenericValidator } from '../../../shared/generic-validator';
 import { BookItems } from '../state/book';
 import { BooksService } from '../books.service';
 import { BooksFacade } from '../state/books.facade';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'tmobile-billing-details',
@@ -50,7 +51,7 @@ export class BillingDetailsComponent implements OnInit {
 
     this.formInit();
 
-    let MOBILE_PATTERN = /[0-9\+\-\ ]/;
+    const MOBILE_PATTERN = /[0-9\+\-\ ]/;
     this.billingForm = this.fb.group({
       orderName: ['', [Validators.required]],
       email: ['', [Validators.required,
@@ -74,16 +75,17 @@ export class BillingDetailsComponent implements OnInit {
   submitOrder(form){
     if(form.value.address !== null && form.value.address !== ''){
       this.billingInfo = form.value;
-      const books = this.booksService.getPurchaseListItems();
-
+      const books = this.booksFacade.purchaseListItems$;
       const orderInfo = [{
-          address : form.value.address ,
-          name : form.value.orderName,
-          email : form.value.email,
-          phoneNumber : form.value.phoneNumber
+        address : form.value.address ,
+        name : form.value.orderName,
+        email : form.value.email,
+        phoneNumber : form.value.phoneNumber
       }];
+      books.subscribe(item =>{
+        this.booksFacade.addToCollections(item, orderInfo);
+      });
 
-      this.booksFacade.addToCollections(books, orderInfo);
       form.reset();
       Object.keys(form.controls).forEach(key => {
         form.get(key).setErrors(null) ;

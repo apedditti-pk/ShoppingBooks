@@ -44,7 +44,7 @@ export class BookDetailComponent implements OnInit {
   }
 
   buyNow(book){
-    this.booksService.setPurchaseListItems([book]);
+    this.booksFacade.purchaseListItems([book]);
     this.route.navigate(['billingDetails']);
   }
 

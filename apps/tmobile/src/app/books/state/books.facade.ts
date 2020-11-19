@@ -17,6 +17,7 @@ export class BooksFacade {
   cartBooks$ = this.store.pipe(select(fromBook.getCartItems)) as Observable<BookItems[]>;
   collectionBooks$ =  this.store.pipe(select(fromBook.getCollectionItems)) as Observable<BookItems[]>;
   cartItemsCount$ = this.store.pipe(select(fromBook.getCartItemsCount)) as Observable<number>;
+  purchaseListItems$ = this.store.pipe(select(fromBook.getPurchaseItems)) as Observable<BookItems[]>;
 
   constructor(
     private store: Store<fromBook.State>,
@@ -39,6 +40,10 @@ export class BooksFacade {
 
   addToCart(book){
     this.store.dispatch( BookActions.AddToCart(book));
+  }
+
+  purchaseListItems(books : BookItems[]){
+    this.store.dispatch( BookActions.AddToPurchaseList({payload : books}));
   }
 
   

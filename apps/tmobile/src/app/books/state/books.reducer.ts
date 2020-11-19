@@ -17,6 +17,7 @@ export const initialState: BooksState = bookAdapter.getInitialState({
   collectionItems: [],
   searchKey: '',
   list: [],
+  purchaseList :[]
 });
 
 export interface BooksState {
@@ -25,7 +26,7 @@ export interface BooksState {
   collectionItems: [];
   searchKey: string;
   loaded: boolean;
-  // purchaseList : BookItems[]
+  purchaseList : BookItems[]
 }
 
 export const booksAdapter = createEntityAdapter<BooksState>();
@@ -39,6 +40,11 @@ export const getBooks = createSelector(
   // you need to export the create selector in order to utilize in components
   getBookFeatureState,
   (state: BooksState) => state.list
+);
+
+export const getPurchaseItems = createSelector( // you need to export the create selector in order to utilize in components
+    getBookFeatureState,
+    (state: BooksState) => state.purchaseList
 );
 
 export const getCartItems = createSelector(
@@ -93,14 +99,22 @@ const reducer = createReducer(
   }),
 
   on(Books.AddToCollections, (state, { payload, purchaseInfo }) => {
-    const newData = payload.map((item) =>
-      Object.assign({}, item, { purchaseInfo: purchaseInfo[0] })
+    let newData;
+    payload.forEach((item) =>
+     newData = Object.assign({}, item, { purchaseInfo: purchaseInfo[0] })
     );
     return Object.assign({
       ...state,
       collectionItems: state.collectionItems.concat(newData),
     });
-  })
+  }),
+
+  on(Books.AddToPurchaseList, (state, payload) => {
+    return Object.assign({
+      ...state,
+      purchaseList: payload.payload,
+    });
+  }),
 );
 
 export function booksReducer(state: BooksState | undefined, action: Action) {

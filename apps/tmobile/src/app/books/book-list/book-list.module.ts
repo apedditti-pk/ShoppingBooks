@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import {
   MatIconModule,
   MatMenuModule,
@@ -6,22 +6,15 @@ import {
 } from '@angular/material';
 import { MatListModule } from '@angular/material/list';
 import { CommonModule } from '@angular/common';
-import { RouterModule, Routes } from '@angular/router';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule }   from '@angular/forms';
 import { EllipsisModule } from 'ngx-ellipsis';
 
-import { CartComponent } from './cart.component';
-import { BookListModule } from '../book-list/book-list.module';
-
-
-const cartRoutes: Routes = [
-  { path: '', component: CartComponent }
-];
+import { BookListComponent } from './book-list.component';
 
 @NgModule({
   declarations: [
-    CartComponent
+    BookListComponent
   ],
   imports: [
     MatMenuModule,
@@ -31,13 +24,16 @@ const cartRoutes: Routes = [
     CommonModule, // If you are making your own module ,should include this,
     MatInputModule,
     FormsModule,
-    EllipsisModule,
-    RouterModule.forChild(cartRoutes),
-    BookListModule
+    EllipsisModule
   ],
   exports: [
+      BookListComponent
   ],
   providers:[
+  ],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA,
+    NO_ERRORS_SCHEMA
   ]
 })
-export class CartModule { }
+export class BookListModule { }

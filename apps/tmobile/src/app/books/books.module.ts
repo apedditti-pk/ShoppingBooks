@@ -14,7 +14,9 @@ import { BooksEffects } from './state/books.effects';
         EffectsModule.forFeature([BooksEffects])
     ],
     declarations:[],
-    providers:[]
+    providers:[],
+    exports: [
+    ],
 })
 
 export class BooksModule{

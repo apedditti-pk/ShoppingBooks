@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -22,7 +22,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 
 
 @NgModule({
-  declarations: [AppComponent, PageNotFoundComponent],
+  declarations: [AppComponent, PageNotFoundComponent ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -47,5 +47,6 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     BooksFacade
   ],
   bootstrap: [AppComponent],
+  
 })
 export class AppModule {}

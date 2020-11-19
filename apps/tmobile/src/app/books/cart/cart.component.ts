@@ -29,7 +29,7 @@ export class CartComponent implements OnInit {
   }
 
   purchaseClicked(books){
-    this.booksService.setPurchaseListItems(books);
+    this.booksFacade.purchaseListItems(books);
     this.route.navigate(['billingDetails']);
   }
   
