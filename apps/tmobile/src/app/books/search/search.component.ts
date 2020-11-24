@@ -25,11 +25,11 @@ export class SearchComponent implements OnInit {
   }
 
 
-  searchBtnClicked(){
+  searchBtnClicked(): void{
     this.booksFacade.loadAll(this.searchValue);
   }
 
-  bookSelected(id){
+  bookSelected(id:string){
     this.route.navigate(['/bookDetail',id]);
   }
 

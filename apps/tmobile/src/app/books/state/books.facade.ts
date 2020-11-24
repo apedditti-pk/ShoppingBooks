@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 
 import * as fromBook from './books.reducer';
 import * as BookActions from './books.actions';
-import { BookItem } from './book';
+import { Book, BookItem } from './book';
 
 @Injectable()
 export class BooksFacade {
@@ -38,8 +38,8 @@ export class BooksFacade {
     this.store.dispatch(BookActions.DeleteFromCart({payload}));
   }
 
-  addToCart(book){
-    this.store.dispatch( BookActions.AddToCart(book));
+  addToCart(book: BookItem){
+    this.store.dispatch( BookActions.AddToCart({payload : book}));
   }
 
   purchaseListItems(books : BookItem[]){

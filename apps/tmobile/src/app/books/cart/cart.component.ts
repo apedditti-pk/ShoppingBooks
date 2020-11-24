@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 
 import { BookItem } from '../state/book';
-import { BooksService } from '../books.service';
 import { BooksFacade } from '../state/books.facade';
 
 @Component({
@@ -27,7 +26,7 @@ export class CartComponent implements OnInit {
     this.booksFacade.clearCart(payload);
   }
 
-  purchaseClicked(books){
+  purchaseClicked(books: BookItem[]){
     this.booksFacade.purchaseListItems(books);
     this.route.navigate(['billingDetails']);
   }

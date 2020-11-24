@@ -1,14 +1,12 @@
-import { async, inject, TestBed } from '@angular/core/testing';
+import { async, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { provideMockStore } from '@ngrx/store/testing';
-import { of } from 'rxjs/internal/observable/of';
-import { provideMockActions } from '@ngrx/effects/testing';
 
 import { SearchService } from '../search/search.service';
 import * as BookActions from './books.actions';
 import { Load } from './books.actions';
-import { Book, BookItem } from './book';
+import { Book } from './book';
 
 describe('Books Actions', () => {
   const initialState : Book= {

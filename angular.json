@@ -10,7 +10,7 @@
       },
       "root": "apps/tmobile",
       "sourceRoot": "apps/tmobile/src",
-      "prefix": "tmobile",
+      "prefix": "shopping",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",

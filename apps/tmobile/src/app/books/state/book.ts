@@ -17,19 +17,19 @@ export interface BookItem{
             smallThumbnail : string
             thumbnail : string
         },
-        publisher: string,
-        publishedDate : string,
-        pageCount : number,
-        printType : string,
-        averageRating: number,
-        ratingsCount : number,
-        maturityRating : string,
-        allowAnonLogging: Boolean,
-        contentVersion: string,
-        language: string,
-        previewLink : string,
-        infoLink :string,
-        canonicalVolumeLink: string,
+        publisher : string,
+        publishedDate ?: string,
+        pageCount ?: number,
+        printType ?: string,
+        averageRating ?: number,
+        ratingsCount ?: number,
+        maturityRating ?: string,
+        allowAnonLogging ?: Boolean,
+        contentVersion ?: string,
+        language ?: string,
+        previewLink ?: string,
+        infoLink ?:string,
+        canonicalVolumeLink ?: string,
     };
     saleInfo: object;
     accessInfo:object;

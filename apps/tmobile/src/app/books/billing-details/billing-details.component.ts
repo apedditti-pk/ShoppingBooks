@@ -2,9 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators} from '@angular/forms';
 import { GenericValidator } from '../../../shared/generic-validator';
 import { BookItem } from '../state/book';
-import { BooksService } from '../books.service';
 import { BooksFacade } from '../state/books.facade';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'tmobile-billing-details',
@@ -24,7 +22,6 @@ export class BillingDetailsComponent implements OnInit {
 
   
   constructor(private fb: FormBuilder,
-              private booksService :BooksService,
               private booksFacade: BooksFacade) {
     this.validationMessages = {
       orderName: {
@@ -90,7 +87,7 @@ export class BillingDetailsComponent implements OnInit {
       Object.keys(form.controls).forEach(key => {
         form.get(key).setErrors(null) ;
       });
-      this.booksService.emptyPurchaseListItems();
+      //this.booksService.emptyPurchaseListItems();
     }
   }
 

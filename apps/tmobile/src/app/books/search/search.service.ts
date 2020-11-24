@@ -15,7 +15,7 @@ export class SearchService {
 
   constructor(private http: HttpClient) { }
    
-  getBooks(value): Observable<Book> {
+  getBooks(value: string): Observable<Book> {
     return this.http.get<Book>(this.booksUrl+value)
       .pipe(
         tap(data => console.log(JSON.stringify(data))),

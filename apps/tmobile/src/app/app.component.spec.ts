@@ -9,7 +9,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BooksFacade } from './books/state/books.facade';
 import { BooksModule } from './books/books.module';
-import { BooksService } from './books/books.service';
 import { SearchService } from './books/search/search.service';
 import { LayoutsModule } from './layouts/layout.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -26,7 +25,6 @@ describe('AppComponent', () => {
       ],
       providers:[
         SearchService,
-        BooksService,
         BooksFacade,
         {provide: APP_BASE_HREF, useValue : '/' }
       ],

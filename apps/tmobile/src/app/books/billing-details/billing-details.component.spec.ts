@@ -13,7 +13,6 @@ import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 
 
 import { BooksFacade } from '../state/books.facade';
-import { BooksService } from '../books.service';
 import { BillingDetailsComponent } from './billing-details.component';
 
 describe('BillingDetailsComponent', () => {
@@ -24,7 +23,7 @@ describe('BillingDetailsComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ BillingDetailsComponent ],
-      providers: [ BooksService,
+      providers: [ 
                    BooksFacade ,
                    FormBuilder ,
                    FormGroup,

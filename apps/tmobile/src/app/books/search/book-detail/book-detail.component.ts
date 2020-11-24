@@ -4,8 +4,7 @@ import { ActivatedRoute , Params ,Router} from '@angular/router';
 import { Store, select } from '@ngrx/store';
 
 import * as fromBook from '../../state/books.reducer';
-import { BookItem } from '../../state/book';
-import { BooksService } from '../../books.service';
+import { Book, BookItem } from '../../state/book';
 import { BooksFacade } from '../../state/books.facade';
 
 
@@ -22,11 +21,10 @@ export class BookDetailComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private route: Router,
     private store: Store<any>,
-    private booksService: BooksService,
     private booksFacade: BooksFacade
   ) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.getBook();
   }
 
@@ -39,11 +37,11 @@ export class BookDetailComponent implements OnInit {
     });
   }
 
-  addToCart(book){
+  addToCart(book : BookItem){
     this.booksFacade.addToCart(book);
   }
 
-  buyNow(book){
+  buyNow(book: BookItem){
     this.booksFacade.purchaseListItems([book]);
     this.route.navigate(['billingDetails']);
   }

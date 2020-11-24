@@ -87,7 +87,7 @@ const reducer = createReducer(
   on(Books.AddToCart, (state, payload) => {
     return Object.assign({
       ...state,
-      cartItems: [...state.cartItems, payload],
+      cartItems: [...state.cartItems, payload.payload],
     });
   }),
 

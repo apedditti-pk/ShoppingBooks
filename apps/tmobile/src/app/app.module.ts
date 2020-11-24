@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -9,7 +9,6 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EllipsisModule } from 'ngx-ellipsis';
 
-import { BooksService } from './books/books.service';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BooksFacade } from './books/state/books.facade';
@@ -43,7 +42,6 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
   ],
   providers: [
     SearchService,
-    BooksService,
     BooksFacade
   ],
   bootstrap: [AppComponent],
