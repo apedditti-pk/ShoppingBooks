@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators} from '@angular/forms';
 import { GenericValidator } from '../../../shared/generic-validator';
-import { BookItems } from '../state/book';
+import { BookItem } from '../state/book';
 import { BooksService } from '../books.service';
 import { BooksFacade } from '../state/books.facade';
 import { Observable } from 'rxjs';
@@ -19,7 +19,7 @@ export class BillingDetailsComponent implements OnInit {
   private genericValidator: GenericValidator;
   billingInfo = [];
 
-  book: BookItems[];
+  book: BookItem[];
   bookId: string;
 
   

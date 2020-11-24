@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 
 import { Observable } from 'rxjs';
 
-import { BookItems } from '../state/book';
+import { BookItem } from '../state/book';
 import { BooksFacade } from '../state/books.facade';
 
 
@@ -14,7 +14,7 @@ import { BooksFacade } from '../state/books.facade';
 })
 export class SearchComponent implements OnInit {
   searchValue = '';
-  books$: Observable<BookItems[]>;
+  books$: Observable<BookItem[]>;
 
   constructor(
     private route: Router,

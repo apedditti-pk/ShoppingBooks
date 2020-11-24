@@ -15,7 +15,7 @@ import { FormsModule }   from '@angular/forms';
 import { EllipsisModule } from 'ngx-ellipsis';
 
 import { MyCollectionComponent } from './my-collection.component';
-import { BookListModule } from '../book-list/book-list.module';
+import { BookListModule } from '../shared/book-list/book-list.module';
 
 
 const myCollectionRoutes: Routes = [

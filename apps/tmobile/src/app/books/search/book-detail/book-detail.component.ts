@@ -4,7 +4,7 @@ import { ActivatedRoute , Params ,Router} from '@angular/router';
 import { Store, select } from '@ngrx/store';
 
 import * as fromBook from '../../state/books.reducer';
-import { BookItems } from '../../state/book';
+import { BookItem } from '../../state/book';
 import { BooksService } from '../../books.service';
 import { BooksFacade } from '../../state/books.facade';
 
@@ -15,7 +15,7 @@ import { BooksFacade } from '../../state/books.facade';
   styleUrls: ['./book-detail.component.scss']
 })
 export class BookDetailComponent implements OnInit {
-  book: BookItems;
+  book: BookItem;
   bookId: string;
 
   constructor(
@@ -33,7 +33,7 @@ export class BookDetailComponent implements OnInit {
   getBook(): void {
     this.activatedRoute.params.subscribe((params: Params) => this.bookId = params['id']);
     this.store.pipe(select(fromBook.getBooks)).subscribe((books)=>{
-      this.book = books.find((book: BookItems) => {
+      this.book = books.find((book: BookItem) => {
         return book.id === this.bookId;
       });
     });

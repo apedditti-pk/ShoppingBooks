@@ -12,7 +12,8 @@ import { FormsModule }   from '@angular/forms';
 import { EllipsisModule } from 'ngx-ellipsis';
 
 import { CartComponent } from './cart.component';
-import { BookListModule } from '../book-list/book-list.module';
+import { BookListModule } from '../shared/book-list/book-list.module';
+
 
 
 const cartRoutes: Routes = [

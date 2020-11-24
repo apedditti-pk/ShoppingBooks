@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Observable } from 'rxjs';
 
-import { BookItems } from '../state/book';
+import { BookItem } from '../state/book';
 import { BooksFacade } from '../state/books.facade';
 
 
@@ -12,7 +12,7 @@ import { BooksFacade } from '../state/books.facade';
   styleUrls: ['./my-collection.component.scss']
 })
 export class MyCollectionComponent implements OnInit {
-  collectionBooks$: Observable<BookItems[]>;
+  collectionBooks$: Observable<BookItem[]>;
 
   constructor(private booksFacade: BooksFacade) { }
 

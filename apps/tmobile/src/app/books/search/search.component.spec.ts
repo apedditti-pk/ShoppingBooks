@@ -15,7 +15,7 @@ import {
 import { MatListModule } from '@angular/material/list';
 import { Router } from '@angular/router';
 
-import { BookItems } from '../state/book';
+import { BookItem } from '../state/book';
 import * as fromBook from '../state/books.reducer';
 import { BooksFacade } from '../state/books.facade';
 import { SearchComponent } from './search.component';

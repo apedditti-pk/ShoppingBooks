@@ -1,6 +1,6 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 import { Action, createReducer, on } from '@ngrx/store';
-import { Book, BookItems } from './book';
+import { Book, BookItem } from './book';
 import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 import * as Books from './books.actions';
 
@@ -26,7 +26,7 @@ export interface BooksState {
   collectionItems: [];
   searchKey: string;
   loaded: boolean;
-  purchaseList : BookItems[]
+  purchaseList : BookItem[]
 }
 
 export const booksAdapter = createEntityAdapter<BooksState>();
@@ -94,7 +94,7 @@ const reducer = createReducer(
   on(Books.DeleteFromCart, (state, {payload}) => {
     return Object.assign({
       ...state,
-      cartItems: state.cartItems.filter((item:BookItems) => payload.id !== item.id),
+      cartItems: state.cartItems.filter((item:BookItem) => payload.id !== item.id),
     });
   }),
 

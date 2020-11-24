@@ -2,10 +2,10 @@
 export interface Book {
     kind: string;
     totalItems: number;
-    items: BookItems[];
+    items: BookItem[];
 }
 
-export interface BookItems{
+export interface BookItem{
     kind : string;
     id: string;
     etag: string;

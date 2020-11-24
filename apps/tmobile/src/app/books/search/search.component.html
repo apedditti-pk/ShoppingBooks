@@ -10,16 +10,7 @@
     </div>
     <div class = "search-list-container" *ngIf="books$ | async as books">
         <div class = "book-container"  *ngFor="let book of books" (click) = "bookSelected(book.id)">
-            <div class = "book-title-container">
-                <p><b>{{ book.volumeInfo.title }}</b></p>
-                <span *ngIf = "book.volumeInfo.imageLinks"><img [src]= 'book.volumeInfo.imageLinks.smallThumbnail'/></span>
-            </div>
-            <p style="width: 100%; height: 70px;" ellipsis [ellipsis-content]="book.volumeInfo.description">
-            </p>
-            <div class = "book-signature">
-                <span><b>written by</b></span>
-                <span>{{ book.volumeInfo.publisher }}</span>
-            </div>
+            <tmobile-book-list [book]="book"></tmobile-book-list>
         </div>
     </div>
 </div>

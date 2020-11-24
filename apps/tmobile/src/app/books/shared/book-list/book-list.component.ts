@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { BookItems } from '../state/book';
+import { BookItem } from '../../state/book';
 
 @Component({
   selector: 'tmobile-book-list',
@@ -8,7 +8,7 @@ import { BookItems } from '../state/book';
 })
 
 export class BookListComponent{
-  @Input() book : BookItems ;
+  @Input() book : BookItem ;
 
   constructor() { }
 

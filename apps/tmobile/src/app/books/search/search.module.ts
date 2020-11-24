@@ -15,6 +15,7 @@ import { EllipsisModule } from 'ngx-ellipsis';
 
 import { SearchComponent } from './search.component';
 import { BookDetailComponent } from './book-detail/book-detail.component';
+import { BookListModule } from '../shared/book-list/book-list.module';
 
 
 const searchRoutes: Routes = [
@@ -41,6 +42,7 @@ const searchRoutes: Routes = [
     CommonModule, // If you are making your own module ,should include this,
     FormsModule,
     EllipsisModule,
+    BookListModule,
     RouterModule.forChild(searchRoutes)
   ],
   exports: [

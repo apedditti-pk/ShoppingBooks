@@ -3,7 +3,7 @@ import { async, inject, TestBed } from '@angular/core/testing';
 import { MemoizedSelector, Store } from '@ngrx/store';
 
 import { BooksFacade } from './books.facade';
-import { BookItems } from './book';
+import { BookItem } from './book';
 import * as fromBook from './books.reducer';
 import * as BookActions from './books.actions';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';

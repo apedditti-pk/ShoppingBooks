@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 
 import { Observable } from 'rxjs';
 
-import { BookItems } from '../state/book';
+import { BookItem } from '../state/book';
 import { BooksService } from '../books.service';
 import { BooksFacade } from '../state/books.facade';
 
@@ -13,7 +13,7 @@ import { BooksFacade } from '../state/books.facade';
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
-  cartBooks$: Observable <BookItems[]>;
+  cartBooks$: Observable <BookItem[]>;
 
   constructor(private route: Router,
               private booksService :BooksService,
@@ -24,7 +24,7 @@ export class CartComponent implements OnInit {
     this.cartBooks$ = this.booksFacade.cartBooks$;
   }
 
-  clearCartClicked(payload:BookItems){
+  clearCartClicked(payload:BookItem){
     this.booksFacade.clearCart(payload);
   }
 
