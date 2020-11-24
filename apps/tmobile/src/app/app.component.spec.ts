@@ -10,7 +10,6 @@ import { AppComponent } from './app.component';
 import { BooksFacade } from './books/state/books.facade';
 import { BooksModule } from './books/books.module';
 import { BooksService } from './books/books.service';
-import { HomeComponent } from './books/home/home.component';
 import { SearchService } from './books/search/search.service';
 import { LayoutsModule } from './layouts/layout.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -23,7 +22,6 @@ describe('AppComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
-        HomeComponent,
         PageNotFoundComponent
       ],
       providers:[

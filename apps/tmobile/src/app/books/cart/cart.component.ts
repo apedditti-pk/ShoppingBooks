@@ -16,7 +16,6 @@ export class CartComponent implements OnInit {
   cartBooks$: Observable <BookItem[]>;
 
   constructor(private route: Router,
-              private booksService :BooksService,
               private booksFacade: BooksFacade) { }
               
 

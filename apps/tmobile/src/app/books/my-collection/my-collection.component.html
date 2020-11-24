@@ -3,7 +3,7 @@
   *ngIf="outlet.isActivated == false && collectionBooks$ | async as books"
 >
   <div class="book-container" *ngFor="let book of books">
-    <tmobile-book-list [book]="book"></tmobile-book-list>
+    <book-list [book]="book"></book-list>
     <div class="billing-info">
       <span><b>Name: </b>{{ book.purchaseInfo.name }}</span>
       <span><b>Email: </b>{{ book.purchaseInfo.email }}</span>

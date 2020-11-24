@@ -23,7 +23,24 @@ describe('Books Actions', () => {
         }).compileComponents();
     }));
     
-    it('should create an action', () => {
+    it('should create action for Load with passed data', () => {
+      const payload = { payload: 'angular'};
+      expect(Load(payload)).toEqual({type: '[Book] Load Book' , payload: 'angular'})
+    });
+
+    it('should create action for Load with passed data', () => {
+      const payload = { payload: 'angular'};
+      expect(Load(payload)).toEqual({type: '[Book] Load Book' , payload: 'angular'})
+    });
+
+    it('should create action for Load with passed data', () => {
+      const payload = { payload: 'angular'};
+      expect(Load(payload)).toEqual({type: '[Book] Load Book' , payload: 'angular'})
+    });
+    
+    it('should create action for Load with passed data', () => {
+      const payload = { payload: 'angular'};
+      expect(Load(payload)).toEqual({type: '[Book] Load Book' , payload: 'angular'})
     });
 
 

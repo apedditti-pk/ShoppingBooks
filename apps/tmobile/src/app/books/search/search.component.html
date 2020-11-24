@@ -10,7 +10,7 @@
     </div>
     <div class = "search-list-container" *ngIf="books$ | async as books">
         <div class = "book-container"  *ngFor="let book of books" (click) = "bookSelected(book.id)">
-            <tmobile-book-list [book]="book"></tmobile-book-list>
+            <book-list [book]="book"></book-list>
         </div>
     </div>
 </div>

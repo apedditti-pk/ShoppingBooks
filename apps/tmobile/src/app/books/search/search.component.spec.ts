@@ -22,6 +22,7 @@ import { SearchComponent } from './search.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { EllipsisModule } from 'ngx-ellipsis';
 import { BookDetailComponent } from './book-detail/book-detail.component';
+import { BookListModule } from '../shared/book-list/book-list.module';
 
 describe('SearchComponent', () => {
   let component: SearchComponent;
@@ -47,6 +48,7 @@ describe('SearchComponent', () => {
         MatInputModule,
         FormsModule,
         EllipsisModule,
+        BookListModule,
         RouterTestingModule.withRoutes([
           {path: 'search/bookDetail/:id', component: BookDetailComponent}
         ])

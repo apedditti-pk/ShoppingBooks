@@ -170,11 +170,11 @@ describe('BookDetailComponent', () => {
   }));
 
   it('should call buyNow() method ', inject(
-    [BooksService],
-    (service : BooksService) => {
+    [BooksFacade],
+    (facade : BooksFacade) => {
     spyOn(component, 'buyNow').and.callThrough();
     const navigateSpy = spyOn(router, 'navigate');
-    const spy = spyOn(service, 'setPurchaseListItems');
+    const spy = spyOn(facade, 'purchaseListItems');
 
     component.buyNow(initialState);
     fixture.detectChanges();

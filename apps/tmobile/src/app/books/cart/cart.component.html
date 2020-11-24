@@ -1,6 +1,6 @@
 <div class = "cart-container" *ngIf="outlet.isActivated == false && cartBooks$ | async as cartBooks">
         <div class = "book-container"  *ngFor="let cartBook of cartBooks">
-            <tmobile-book-list [book] = cartBook></tmobile-book-list>
+            <book-list [book] = cartBook></book-list>
             <div class = "cart-buttons">
                 <button mat-button matSuffix mat-icon-button (click) = "clearCartClicked(cartBook)">
                     <mat-icon> remove_shopping_cart</mat-icon>

@@ -17,6 +17,7 @@ import { MyCollectionComponent } from './my-collection.component';
 import * as fromBook from '../state/books.reducer';
 import { FormsModule } from '@angular/forms';
 import { EllipsisModule } from 'ngx-ellipsis';
+import { BookListModule } from '../shared/book-list/book-list.module';
 
 describe('MyCollectionComponent', () => {
   let component: MyCollectionComponent;
@@ -44,6 +45,7 @@ describe('MyCollectionComponent', () => {
         FormsModule,
         EllipsisModule,
         MatListModule,
+        BookListModule,
         RouterTestingModule
       ]
     })
