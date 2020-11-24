@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 
 import * as fromBook from './books.reducer';
 import * as BookActions from './books.actions';
-import { Book, BookItem } from './book';
+import {  BookItem } from './book';
 
 @Injectable()
 export class BooksFacade {
@@ -29,7 +29,7 @@ export class BooksFacade {
     this.store.dispatch(BookActions.Load({payload :searchValue}));
   }
 
-  addToCollections(payload: BookItem[], purchaseInfo: any){
+  addToCollections(payload: BookItem[], purchaseInfo: object){
     const x = {payload ,purchaseInfo};
     this.store.dispatch(BookActions.AddToCollections(x));
   }

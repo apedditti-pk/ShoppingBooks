@@ -20,7 +20,7 @@ export class BookDetailComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private route: Router,
-    private store: Store<any>,
+    private store: Store<fromBook.State>,
     private booksFacade: BooksFacade
   ) { }
 
